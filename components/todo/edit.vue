@@ -43,7 +43,7 @@
           <b-button
             variant="light"
             class="m-2"
-            @click="createModal = false"
+            @click="editData.modal = false"
           >Cancel</b-button>
           <b-button
             class="m-2"
