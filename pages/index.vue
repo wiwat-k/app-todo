@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <TodoEdit :editData="editData"/>
+    <TodoEdit :editData="editData" />
   </div>
 </template>
 
@@ -36,9 +36,17 @@ export default {
     },
     password: '',
     todoList: [],
+    firstArray: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
+    secondArray: [3, 5, 7, 9]
   }),
   methods: {
-    async editTodo (item) {
+    fillterArray () {
+      const newArray = this.firstArray.filter((item) => {
+        return this.secondArray.includes(item)
+      })
+      console.log(newArray)
+    },
+    editTodo (item) {
       this.editData.modal = true
       this.editData.id = item._id
       this.editData.title = item.title
@@ -61,6 +69,7 @@ export default {
   },
   mounted () {
     this.getTodoList()
+    this.fillterArray()
   },
 }
 </script>
